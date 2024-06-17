@@ -12,13 +12,17 @@ def load_model():
 if __name__ == "__main__":
     load_model()
 
-config.json: 100%|██████████████████████████████| 481/481 [00:00<00:00, 119kB/s]
-model.safetensors: 100%|██████████████████████| 499M/499M [00:01<00:00, 317MB/s]
-Traceback (most recent call last):
-  File "/exports/eddie/scratch/s2291592/load_model.py", line 9, in <module>
-    load_model()
-  File "/exports/eddie/scratch/s2291592/load_model.py", line 4, in load_model
-    model = RobertaForSequenceClassification.from_pretrained('roberta-base') 
-  File "/exports/eddie/scratch/s2291592/anaconda/envs/mypython/lib/python3.9/site-packages/transformers/modeling_utils.py", line 3531, in from_pretrained
-    with safe_open(resolved_archive_file, framework="pt") as f:
-RuntimeError: unable to mmap 498818054 bytes from file </home/s2291592/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/model.safetensors>: Cannot allocate memory (12)
+python linevul_main.py \
+  --model_name=12heads_linevul_model.bin \
+  --output_dir=./saved_models \
+  --model_type=roberta \
+  --tokenizer_name=microsoft/codebert-base \
+  --model_name_or_path=microsoft/codebert-base \
+  --do_test \
+  --train_data_file=../data/big-vul_dataset/train.csv \
+  --eval_data_file=../data/big-vul_dataset/val.csv \
+  --test_data_file=../data/big-vul_dataset/test.csv \
+  --block_size 512 \
+  --eval_batch_size 512 \
+  --num_train_epochs=1
+
