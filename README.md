@@ -59,6 +59,19 @@ test_threshold = 0.5
 
 #Word-Level+Pretraining(Codesearchnet)+BERT
 
+***** Test results *****
+
+test_accuracy = 0.9002
+
+test_f1 = 0.0646
+
+test_precision = 0.0678
+
+test_recall = 0.0616
+
+test_threshold = 0.5
+
+
 #Word-Level+No Pretraining+BERT
 
 ***** Test results *****
