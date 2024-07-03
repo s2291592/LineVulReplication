@@ -57,4 +57,21 @@ test_recall = 0.1403
 
 test_threshold = 0.5
 
+#Word-Level+Pretraining(Codesearchnet)+BERT
+
+#Word-Level+No Pretraining+BERT
+
+***** Test results *****
+
+test_accuracy = 0.9351
+
+test_f1 = 0.0208
+
+test_precision = 0.0667
+
+test_recall = 0.0123
+
+test_threshold = 0.5
+
+
 <img width="636" alt="image" src="https://github.com/s2291592/LineVulReplication/assets/148365660/0706f8c8-8520-42b1-898f-12d1d43b198e">
