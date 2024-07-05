@@ -4,6 +4,20 @@ https://github.com/awsm-research/LineVul
 
 RQ1:
 
+LineVul:
+
+test_accuracy = 0.9906
+
+test_f1 = 0.9114
+
+test_precision = 0.966
+
+test_recall = 0.8626
+
+test_threshold = 0.5
+
+BoW+RF:
+
 F1 Score: 0.25035360678925034
 
 Precision: 0.49303621169916434
