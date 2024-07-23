@@ -1,37 +1,32 @@
 import pandas as pd
 
 # Read the MBU vulnerabilities list from the file
-input_path = '/Users/ricardoline/Desktop/what_code/MBU_work/mbu_vulnerabilities.txt'
+input_path = r'/Users/ricardoline/Desktop/what_code/MBU_work/mbu_vulnerabilities.txt'
 
 with open(input_path, 'r') as file:
     mbu_vulnerabilities = [line.strip() for line in file]
 
-# Load the original data
-df = pd.read_csv('path/to/train.csv')
 
-# Separate MBU and non-MBU vulnerabilities data
-mbu_data = df[df['CVE ID'].isin(mbu_vulnerabilities)]
-non_mbu_data = df[~df['CVE ID'].isin(mbu_vulnerabilities)]
+# Read the train.csv file
+df = pd.read_csv(r'/exports/eddie/scratch/s2291592/LineVul/data/big-vul_dataset/train.csv')
 
-# Merge functions for MBU vulnerabilities (random order)
-mbu_data_random_order = mbu_data.groupby('CVE ID')['processed_func'].apply(lambda x: ' '.join(x)).reset_index()
-mbu_data_random_order['target'] = 1  # Set the target label
+# Create a dictionary to store merged functions
+merged_funcs = {}
 
-# Pseudocode, in practice, use Joern commands or API
-def generate_callgraph_order(mbu_data):
-    # Use Joern to generate call graphs
-    # Parse call graphs to get function call order
-    # Merge functions based on call order
-    mbu_data_callgraph_order = mbu_data.groupby('CVE ID')['processed_func'].apply(lambda x: ' '.join(sorted(x))).reset_index()  # Example, sort based on call graph
-    mbu_data_callgraph_order['target'] = 1
-    return mbu_data_callgraph_order
+# Iterate over the DataFrame to process MBU vulnerabilities
+for index, row in df.iterrows():
+    cve_id = row['CVE ID']
+    if cve_id in mbu_vulnerabilities:
+        if cve_id not in merged_funcs:
+            merged_funcs[cve_id] = row['processed_func']
+        else:
+            merged_funcs[cve_id] += ' ' + row['processed_func']
+        df.at[index, 'processed_func'] = merged_funcs[cve_id]
 
-mbu_data_callgraph_order = generate_callgraph_order(mbu_data)
+# Keep only the first occurrence of each CVE ID
+df = df.drop_duplicates(subset=['CVE ID'], keep='first')
 
-# Combine MBU and non-MBU data
-train_data_random_order = pd.concat([mbu_data_random_order, non_mbu_data])
-train_data_callgraph_order = pd.concat([mbu_data_callgraph_order, non_mbu_data])
+# Output the result
+df.to_csv(r'/exports/eddie/scratch/s2291592/LineVul/data/big-vul_dataset/merged_train.csv', index=False)
+print("Processing complete, the result has been saved to merged_train.csv")
 
-# Save the generated datasets
-train_data_random_order.to_csv('path/to/train_random_order.csv', index=False)
-train_data_callgraph_order.to_csv('path/to/train_callgraph_order.csv', index=False)
