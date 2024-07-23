@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read the MBU vulnerabilities list from the file
-input_path = r'/Users/ricardoline/Desktop/what_code/MBU_work/mbu_vulnerabilities.txt'
+input_path = r'/exports/eddie/scratch/s2291592/LineVulReplication/MBU_work/mbu_vulnerabilities.txt'
 
 with open(input_path, 'r') as file:
     mbu_vulnerabilities = [line.strip() for line in file]
