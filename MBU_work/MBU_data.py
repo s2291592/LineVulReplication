@@ -1,32 +1,50 @@
 import pandas as pd
-
-# Read the MBU vulnerabilities list from the file
-input_path = r'/exports/eddie/scratch/s2291592/LineVulReplication/MBU_work/mbu_vulnerabilities.txt'
-
-with open(input_path, 'r') as file:
-    mbu_vulnerabilities = [line.strip() for line in file]
+import os
 
 
-# Read the train.csv file
-df = pd.read_csv(r'/exports/eddie/scratch/s2291592/LineVul/data/big-vul_dataset/train.csv')
+train_df = pd.read_csv(r"/exports/eddie/scratch/s2291592/LineVul/data/big-vul_dataset/train.csv")
 
-# Create a dictionary to store merged functions
-merged_funcs = {}
 
-# Iterate over the DataFrame to process MBU vulnerabilities
-for index, row in df.iterrows():
-    cve_id = row['CVE ID']
-    if cve_id in mbu_vulnerabilities:
-        if cve_id not in merged_funcs:
-            merged_funcs[cve_id] = row['processed_func']
-        else:
-            merged_funcs[cve_id] += ' ' + row['processed_func']
-        df.at[index, 'processed_func'] = merged_funcs[cve_id]
+with open(r'/exports/eddie/scratch/s2291592/LineVulReplication//MBU_work/mbu_vulnerabilities.txt', 'r') as file:
+    mbu_cve_ids = set(file.read().splitlines())
 
-# Keep only the first occurrence of each CVE ID
-df = df.drop_duplicates(subset=['CVE ID'], keep='first')
+processed_data = []
 
-# Output the result
-df.to_csv(r'/exports/eddie/scratch/s2291592/LineVul/data/big-vul_dataset/merged_train.csv', index=False)
-print("Processing complete, the result has been saved to merged_train.csv")
 
+output_dir = r'/exports/eddie/scratch/s2291592/CVE_Merged_Files'
+os.makedirs(output_dir, exist_ok=True)
+
+
+processed_mbu_cves = set()
+
+
+for cve_id, group in train_df.groupby('CVE ID'):
+    if cve_id in mbu_cve_ids:
+        if cve_id not in processed_mbu_cves:
+            
+            merged_funcs = '\n'.join(group['processed_func'])  
+            
+            first_row = group.iloc[0].to_dict()
+            first_row['processed_func'] = merged_funcs
+            processed_data.append(first_row)
+            
+            
+            cve_file_path = os.path.join(output_dir, f'{cve_id}-merged-functions.txt')
+            
+            with open(cve_file_path, 'w') as f:
+                f.write(merged_funcs)
+            
+            
+            processed_mbu_cves.add(cve_id)
+    else:
+        
+        for _, row in group.iterrows():
+            processed_data.append(row.to_dict())
+
+
+processed_df = pd.DataFrame(processed_data)
+
+
+processed_df.to_csv(r'/exports/eddie/scratch/s2291592/LineVul/data/big-vul_dataset/merged_train.csv', index=False)
+
+print("Finish, now can cd /exports/eddie/scratch/s2291592/LineVul/data/big-vul_dataset")
