@@ -1,0 +1,5 @@
+digraph "&lt;operator&gt;.assignment" {  
+"111669149706" [label = <(METHOD,&lt;operator&gt;.assignment)> ]
+"128849018890" [label = <(METHOD_RETURN,ANY)> ]
+  "111669149706" -> "128849018890" 
+}

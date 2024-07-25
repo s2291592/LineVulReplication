@@ -1,0 +1,5 @@
+digraph "&lt;operator&gt;.indirectFieldAccess" {  
+"111669149711" [label = <(METHOD,&lt;operator&gt;.indirectFieldAccess)> ]
+"128849018895" [label = <(METHOD_RETURN,ANY)> ]
+  "111669149711" -> "128849018895" 
+}

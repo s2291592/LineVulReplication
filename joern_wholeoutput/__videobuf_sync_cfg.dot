@@ -1,0 +1,7 @@
+digraph "__videobuf_sync" {  
+"146028888074" [label = <(RETURN,return 0;,return 0;)<SUB>195</SUB>> ]
+"111669149703" [label = <(METHOD,__videobuf_sync)<SUB>192</SUB>> ]
+"128849018886" [label = <(METHOD_RETURN,int)<SUB>192</SUB>> ]
+  "146028888074" -> "128849018886" 
+  "111669149703" -> "146028888074" 
+}

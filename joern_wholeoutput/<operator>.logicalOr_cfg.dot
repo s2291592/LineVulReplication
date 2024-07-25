@@ -1,0 +1,5 @@
+digraph "&lt;operator&gt;.logicalOr" {  
+"111669149718" [label = <(METHOD,&lt;operator&gt;.logicalOr)> ]
+"128849018902" [label = <(METHOD_RETURN,ANY)> ]
+  "111669149718" -> "128849018902" 
+}

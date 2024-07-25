@@ -1,0 +1,35 @@
+digraph "videobuf_vmalloc_free" {  
+"30064771196" [label = <(&lt;operator&gt;.assignment,*mem=buf-&gt;priv)<SUB>107</SUB>> ]
+"30064771198" [label = <(BUG_ON,BUG_ON (!mem))<SUB>108</SUB>> ]
+"30064771200" [label = <(MAGIC_CHECK,MAGIC_CHECK(mem-&gt;magic,MAGIC_VMAL_MEM))<SUB>110</SUB>> ]
+"30064771202" [label = <(vfree,vfree(mem-&gt;vmalloc))<SUB>112</SUB>> ]
+"30064771204" [label = <(&lt;operator&gt;.assignment,mem-&gt;vmalloc=NULL)<SUB>113</SUB>> ]
+"146028888070" [label = <(RETURN,return;,return;)<SUB>115</SUB>> ]
+"30064771197" [label = <(&lt;operator&gt;.indirectFieldAccess,buf-&gt;priv)<SUB>107</SUB>> ]
+"30064771199" [label = <(&lt;operator&gt;.logicalNot,!mem)<SUB>108</SUB>> ]
+"30064771201" [label = <(&lt;operator&gt;.indirectFieldAccess,mem-&gt;magic)<SUB>110</SUB>> ]
+"30064771203" [label = <(&lt;operator&gt;.indirectFieldAccess,mem-&gt;vmalloc)<SUB>112</SUB>> ]
+"30064771205" [label = <(&lt;operator&gt;.indirectFieldAccess,mem-&gt;vmalloc)<SUB>113</SUB>> ]
+"55834574886" [label = <(FIELD_IDENTIFIER,priv,priv)<SUB>107</SUB>> ]
+"55834574887" [label = <(FIELD_IDENTIFIER,magic,magic)<SUB>110</SUB>> ]
+"55834574888" [label = <(FIELD_IDENTIFIER,vmalloc,vmalloc)<SUB>112</SUB>> ]
+"55834574889" [label = <(FIELD_IDENTIFIER,vmalloc,vmalloc)<SUB>113</SUB>> ]
+"111669149700" [label = <(METHOD,videobuf_vmalloc_free)<SUB>105</SUB>> ]
+"128849018883" [label = <(METHOD_RETURN,void)<SUB>105</SUB>> ]
+  "30064771196" -> "30064771199" 
+  "30064771198" -> "55834574887" 
+  "30064771200" -> "55834574888" 
+  "30064771202" -> "55834574889" 
+  "30064771204" -> "146028888070" 
+  "146028888070" -> "128849018883" 
+  "30064771197" -> "30064771196" 
+  "30064771199" -> "30064771198" 
+  "30064771201" -> "30064771200" 
+  "30064771203" -> "30064771202" 
+  "30064771205" -> "30064771204" 
+  "55834574886" -> "30064771197" 
+  "55834574887" -> "30064771201" 
+  "55834574888" -> "30064771203" 
+  "55834574889" -> "30064771205" 
+  "111669149700" -> "55834574886" 
+}

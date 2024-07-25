@@ -1,0 +1,135 @@
+digraph "videobuf_vm_close" {  
+"30064771206" [label = <(&lt;operator&gt;.assignment,*map = vma-&gt;vm_private_data)<SUB>149</SUB>> ]
+"30064771208" [label = <(&lt;operator&gt;.assignment,*q = map-&gt;q)<SUB>150</SUB>> ]
+"30064771210" [label = <(dprintk,dprintk(2,&quot;vm_close %p [count=%d,vma=%08lx-%08l...)<SUB>153</SUB>> ]
+"30064771214" [label = <(&lt;operator&gt;.postDecrement,map-&gt;count--)<SUB>156</SUB>> ]
+"146028888071" [label = <(RETURN,return;,return;)<SUB>175</SUB>> ]
+"30064771207" [label = <(&lt;operator&gt;.indirectFieldAccess,vma-&gt;vm_private_data)<SUB>149</SUB>> ]
+"30064771209" [label = <(&lt;operator&gt;.indirectFieldAccess,map-&gt;q)<SUB>150</SUB>> ]
+"30064771211" [label = <(&lt;operator&gt;.indirectFieldAccess,map-&gt;count)<SUB>154</SUB>> ]
+"30064771212" [label = <(&lt;operator&gt;.indirectFieldAccess,vma-&gt;vm_start)<SUB>154</SUB>> ]
+"30064771213" [label = <(&lt;operator&gt;.indirectFieldAccess,vma-&gt;vm_end)<SUB>154</SUB>> ]
+"30064771215" [label = <(&lt;operator&gt;.indirectFieldAccess,map-&gt;count)<SUB>156</SUB>> ]
+"30064771216" [label = <(&lt;operator&gt;.equals,0 == map-&gt;count)<SUB>157</SUB>> ]
+"55834574890" [label = <(FIELD_IDENTIFIER,vm_private_data,vm_private_data)<SUB>149</SUB>> ]
+"55834574891" [label = <(FIELD_IDENTIFIER,q,q)<SUB>150</SUB>> ]
+"55834574892" [label = <(FIELD_IDENTIFIER,count,count)<SUB>154</SUB>> ]
+"55834574893" [label = <(FIELD_IDENTIFIER,vm_start,vm_start)<SUB>154</SUB>> ]
+"55834574894" [label = <(FIELD_IDENTIFIER,vm_end,vm_end)<SUB>154</SUB>> ]
+"55834574895" [label = <(FIELD_IDENTIFIER,count,count)<SUB>156</SUB>> ]
+"30064771217" [label = <(&lt;operator&gt;.indirectFieldAccess,map-&gt;count)<SUB>157</SUB>> ]
+"30064771218" [label = <(dprintk,dprintk(1,&quot;munmap %p q=%p\n&quot;,map,q))<SUB>158</SUB>> ]
+"30064771219" [label = <(mutex_lock,mutex_lock(&amp;q-&gt;lock))<SUB>159</SUB>> ]
+"30064771245" [label = <(mutex_unlock,mutex_unlock(&amp;q-&gt;lock))<SUB>172</SUB>> ]
+"30064771248" [label = <(kfree,kfree(map))<SUB>173</SUB>> ]
+"55834574896" [label = <(FIELD_IDENTIFIER,count,count)<SUB>157</SUB>> ]
+"30064771220" [label = <(&lt;operator&gt;.addressOf,&amp;q-&gt;lock)<SUB>159</SUB>> ]
+"30064771223" [label = <(&lt;operator&gt;.lessThan,i &lt; VIDEO_MAX_FRAME)<SUB>160</SUB>> ]
+"30064771224" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>160</SUB>> ]
+"30064771246" [label = <(&lt;operator&gt;.addressOf,&amp;q-&gt;lock)<SUB>172</SUB>> ]
+"30064771221" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;lock)<SUB>159</SUB>> ]
+"30064771222" [label = <(&lt;operator&gt;.assignment,i = 0)<SUB>160</SUB>> ]
+"30064771232" [label = <(&lt;operator&gt;.pointerCall,q-&gt;ops-&gt;buf_release(q,q-&gt;bufs[i]))<SUB>167</SUB>> ]
+"30064771237" [label = <(&lt;operator&gt;.assignment,q-&gt;bufs[i]-&gt;map   = NULL)<SUB>169</SUB>> ]
+"30064771241" [label = <(&lt;operator&gt;.assignment,q-&gt;bufs[i]-&gt;baddr = 0)<SUB>170</SUB>> ]
+"30064771247" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;lock)<SUB>172</SUB>> ]
+"55834574897" [label = <(FIELD_IDENTIFIER,lock,lock)<SUB>159</SUB>> ]
+"30064771225" [label = <(&lt;operator&gt;.equals,NULL == q-&gt;bufs[i])<SUB>161</SUB>> ]
+"30064771228" [label = <(&lt;operator&gt;.notEquals,q-&gt;bufs[i]-&gt;map != map)<SUB>164</SUB>> ]
+"30064771233" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;ops-&gt;buf_release)<SUB>167</SUB>> ]
+"30064771235" [label = <(&lt;operator&gt;.indirectIndexAccess,q-&gt;bufs[i])<SUB>167</SUB>> ]
+"30064771238" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;bufs[i]-&gt;map)<SUB>169</SUB>> ]
+"30064771242" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;bufs[i]-&gt;baddr)<SUB>170</SUB>> ]
+"55834574908" [label = <(FIELD_IDENTIFIER,lock,lock)<SUB>172</SUB>> ]
+"30064771226" [label = <(&lt;operator&gt;.indirectIndexAccess,q-&gt;bufs[i])<SUB>161</SUB>> ]
+"30064771229" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;bufs[i]-&gt;map)<SUB>164</SUB>> ]
+"30064771234" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;ops)<SUB>167</SUB>> ]
+"55834574902" [label = <(FIELD_IDENTIFIER,buf_release,buf_release)<SUB>167</SUB>> ]
+"30064771236" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;bufs)<SUB>167</SUB>> ]
+"30064771239" [label = <(&lt;operator&gt;.indirectIndexAccess,q-&gt;bufs[i])<SUB>169</SUB>> ]
+"55834574905" [label = <(FIELD_IDENTIFIER,map,map)<SUB>169</SUB>> ]
+"30064771243" [label = <(&lt;operator&gt;.indirectIndexAccess,q-&gt;bufs[i])<SUB>170</SUB>> ]
+"55834574907" [label = <(FIELD_IDENTIFIER,baddr,baddr)<SUB>170</SUB>> ]
+"30064771227" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;bufs)<SUB>161</SUB>> ]
+"30064771230" [label = <(&lt;operator&gt;.indirectIndexAccess,q-&gt;bufs[i])<SUB>164</SUB>> ]
+"55834574900" [label = <(FIELD_IDENTIFIER,map,map)<SUB>164</SUB>> ]
+"55834574901" [label = <(FIELD_IDENTIFIER,ops,ops)<SUB>167</SUB>> ]
+"55834574903" [label = <(FIELD_IDENTIFIER,bufs,bufs)<SUB>167</SUB>> ]
+"30064771240" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;bufs)<SUB>169</SUB>> ]
+"30064771244" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;bufs)<SUB>170</SUB>> ]
+"55834574898" [label = <(FIELD_IDENTIFIER,bufs,bufs)<SUB>161</SUB>> ]
+"30064771231" [label = <(&lt;operator&gt;.indirectFieldAccess,q-&gt;bufs)<SUB>164</SUB>> ]
+"55834574904" [label = <(FIELD_IDENTIFIER,bufs,bufs)<SUB>169</SUB>> ]
+"55834574906" [label = <(FIELD_IDENTIFIER,bufs,bufs)<SUB>170</SUB>> ]
+"55834574899" [label = <(FIELD_IDENTIFIER,bufs,bufs)<SUB>164</SUB>> ]
+"111669149701" [label = <(METHOD,videobuf_vm_close)<SUB>147</SUB>> ]
+"128849018884" [label = <(METHOD_RETURN,ANY)<SUB>147</SUB>> ]
+  "30064771206" -> "55834574891" 
+  "30064771208" -> "55834574892" 
+  "30064771210" -> "55834574895" 
+  "30064771214" -> "55834574896" 
+  "146028888071" -> "128849018884" 
+  "30064771207" -> "30064771206" 
+  "30064771209" -> "30064771208" 
+  "30064771211" -> "55834574893" 
+  "30064771212" -> "55834574894" 
+  "30064771213" -> "30064771210" 
+  "30064771215" -> "30064771214" 
+  "30064771216" -> "146028888071" 
+  "30064771216" -> "30064771218" 
+  "55834574890" -> "30064771207" 
+  "55834574891" -> "30064771209" 
+  "55834574892" -> "30064771211" 
+  "55834574893" -> "30064771212" 
+  "55834574894" -> "30064771213" 
+  "55834574895" -> "30064771215" 
+  "30064771217" -> "30064771216" 
+  "30064771218" -> "55834574897" 
+  "30064771219" -> "30064771222" 
+  "30064771245" -> "30064771248" 
+  "30064771248" -> "146028888071" 
+  "55834574896" -> "30064771217" 
+  "30064771220" -> "30064771219" 
+  "30064771223" -> "55834574898" 
+  "30064771223" -> "55834574908" 
+  "30064771224" -> "30064771223" 
+  "30064771246" -> "30064771245" 
+  "30064771221" -> "30064771220" 
+  "30064771222" -> "30064771223" 
+  "30064771232" -> "55834574904" 
+  "30064771237" -> "55834574906" 
+  "30064771241" -> "30064771224" 
+  "30064771247" -> "30064771246" 
+  "55834574897" -> "30064771221" 
+  "30064771225" -> "30064771224" 
+  "30064771225" -> "55834574899" 
+  "30064771228" -> "30064771224" 
+  "30064771228" -> "55834574901" 
+  "30064771233" -> "55834574903" 
+  "30064771235" -> "30064771232" 
+  "30064771238" -> "30064771237" 
+  "30064771242" -> "30064771241" 
+  "55834574908" -> "30064771247" 
+  "30064771226" -> "30064771225" 
+  "30064771229" -> "30064771228" 
+  "30064771234" -> "55834574902" 
+  "55834574902" -> "30064771233" 
+  "30064771236" -> "30064771235" 
+  "30064771239" -> "55834574905" 
+  "55834574905" -> "30064771238" 
+  "30064771243" -> "55834574907" 
+  "55834574907" -> "30064771242" 
+  "30064771227" -> "30064771226" 
+  "30064771230" -> "55834574900" 
+  "55834574900" -> "30064771229" 
+  "55834574901" -> "30064771234" 
+  "55834574903" -> "30064771236" 
+  "30064771240" -> "30064771239" 
+  "30064771244" -> "30064771243" 
+  "55834574898" -> "30064771227" 
+  "30064771231" -> "30064771230" 
+  "55834574904" -> "30064771240" 
+  "55834574906" -> "30064771244" 
+  "55834574899" -> "30064771231" 
+  "111669149701" -> "55834574890" 
+}

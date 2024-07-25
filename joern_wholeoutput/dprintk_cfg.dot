@@ -1,0 +1,5 @@
+digraph "dprintk" {  
+"111669149713" [label = <(METHOD,dprintk)> ]
+"128849018897" [label = <(METHOD_RETURN,ANY)> ]
+  "111669149713" -> "128849018897" 
+}

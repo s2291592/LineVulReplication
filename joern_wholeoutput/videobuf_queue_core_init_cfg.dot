@@ -1,0 +1,5 @@
+digraph "videobuf_queue_core_init" {  
+"111669149715" [label = <(METHOD,videobuf_queue_core_init)> ]
+"128849018899" [label = <(METHOD_RETURN,ANY)> ]
+  "111669149715" -> "128849018899" 
+}
