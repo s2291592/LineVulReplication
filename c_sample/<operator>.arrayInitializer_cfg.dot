@@ -1,5 +1,0 @@
-digraph "&lt;operator&gt;.arrayInitializer" {  
-"111669149709" [label = <(METHOD,&lt;operator&gt;.arrayInitializer)> ]
-"128849018893" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149709" -> "128849018893" 
-}

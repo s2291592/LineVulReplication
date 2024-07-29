@@ -1,5 +1,0 @@
-digraph "mutex_lock" {  
-"111669149738" [label = <(METHOD,mutex_lock)> ]
-"128849018922" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149738" -> "128849018922" 
-}

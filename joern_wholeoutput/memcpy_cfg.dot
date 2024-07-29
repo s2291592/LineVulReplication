@@ -1,5 +1,0 @@
-digraph "memcpy" {  
-"111669149734" [label = <(METHOD,memcpy)> ]
-"128849018918" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149734" -> "128849018918" 
-}

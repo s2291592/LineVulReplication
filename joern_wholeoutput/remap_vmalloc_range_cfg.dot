@@ -1,5 +1,0 @@
-digraph "remap_vmalloc_range" {  
-"111669149732" [label = <(METHOD,remap_vmalloc_range)> ]
-"128849018916" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149732" -> "128849018916" 
-}

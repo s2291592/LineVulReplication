@@ -1,5 +1,0 @@
-digraph "&lt;operator&gt;.cast" {  
-"111669149712" [label = <(METHOD,&lt;operator&gt;.cast)> ]
-"128849018896" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149712" -> "128849018896" 
-}

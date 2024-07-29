@@ -1,5 +1,0 @@
-digraph "kzalloc" {  
-"111669149700" [label = <(METHOD,kzalloc)> ]
-"128849018884" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149700" -> "128849018884" 
-}

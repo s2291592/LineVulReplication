@@ -1,5 +1,0 @@
-digraph "&lt;operator&gt;.indirection" {  
-"111669149710" [label = <(METHOD,&lt;operator&gt;.indirection)> ]
-"128849018894" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149710" -> "128849018894" 
-}

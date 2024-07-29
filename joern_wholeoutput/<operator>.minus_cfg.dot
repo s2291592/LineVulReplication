@@ -1,5 +1,0 @@
-digraph "&lt;operator&gt;.minus" {  
-"111669149721" [label = <(METHOD,&lt;operator&gt;.minus)> ]
-"128849018905" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149721" -> "128849018905" 
-}

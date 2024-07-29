@@ -1,5 +1,0 @@
-digraph "dprintk" {  
-"111669149706" [label = <(METHOD,dprintk)> ]
-"128849018890" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149706" -> "128849018890" 
-}

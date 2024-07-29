@@ -1,5 +1,0 @@
-digraph "&lt;operator&gt;.addressOf" {  
-"111669149716" [label = <(METHOD,&lt;operator&gt;.addressOf)> ]
-"128849018900" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149716" -> "128849018900" 
-}

@@ -1,5 +1,0 @@
-digraph "kmalloc" {  
-"111669149727" [label = <(METHOD,kmalloc)> ]
-"128849018911" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149727" -> "128849018911" 
-}

@@ -1,9 +1,0 @@
-digraph "videobuf_queue_vmalloc_init" {  
-"30064771095" [label = <(videobuf_queue_core_init,videobuf_queue_core_init(q, ops, dev, irqlock, ...)<SUB>30</SUB>> ]
-"30064771096" [label = <(&lt;operator&gt;.addressOf,&amp;qops)<SUB>31</SUB>> ]
-"111669149698" [label = <(METHOD,videobuf_queue_vmalloc_init)<SUB>21</SUB>> ]
-"128849018881" [label = <(METHOD_RETURN,void)<SUB>21</SUB>> ]
-  "30064771095" -> "128849018881" 
-  "30064771096" -> "30064771095" 
-  "111669149698" -> "30064771096" 
-}

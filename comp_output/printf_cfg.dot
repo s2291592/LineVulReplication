@@ -1,5 +1,0 @@
-digraph "printf" {  
-"111669149701" [label = <(METHOD,printf)> ]
-"128849018885" [label = <(METHOD_RETURN,ANY)> ]
-  "111669149701" -> "128849018885" 
-}
